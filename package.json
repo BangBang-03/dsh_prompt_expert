@@ -1,0 +1,47 @@
+{
+  "name": "dsh-prompt-expert",
+  "version": "0.1.1",
+  "private": true,
+  "description": "输入框里的一个 ✨ 按钮：把随手写的草稿直接改写成清晰的提示词，填回输入框并可一键撤销。One ✨ button in the composer that rewrites a rough draft into a clear prompt, fills it back, and can be undone.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.1 <0.3.0"
+  },
+  "scripts": {
+    "test": "node --check client.js && node --check index.js && node test/draft.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "prompt",
+    "composer"
+  ]
+}

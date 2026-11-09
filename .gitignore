@@ -1,0 +1,18 @@
+# 依赖
+node_modules/
+
+# dsh-memory 本地记忆（含本机绝对路径，仅本地使用）
+.dsh-memory/
+
+# 敏感凭据
+.env
+.env.*
+*.pem
+*.key
+
+# 系统 / 编辑器
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/

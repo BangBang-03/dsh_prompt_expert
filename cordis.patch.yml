@@ -1,0 +1,8 @@
+# dsh-prompt-expert bundle patch: one row, both halves.
+#
+# The Node half (exports ".") mounts the loopback POST /prompt-expert/enhance
+# route; the browser half (declared by `dsh.client`, served from client.js)
+# draws the composer button in conversation.input.right.
+- insert:
+    - id: prompt-expert
+      name: dsh-prompt-expert
